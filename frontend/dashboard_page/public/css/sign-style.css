@@ -1,0 +1,232 @@
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ðŸ§­ Navbar */
+.navbar {
+  width: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.brand {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffd369;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f39c12;
+}
+
+/* Body and Container */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #eef2f3, #8ec5fc);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 860px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Title */
+h1 {
+  font-size: 2.5rem;
+  color: #1e40af;
+  margin-bottom: 20px;
+}
+
+/* Webcam + Canvas Area */
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.video-wrapper video,
+.video-wrapper canvas {
+  width: 48%;
+  height: auto;
+  border-radius: 12px;
+  border: 4px solid #1d4ed8;
+  object-fit: cover;
+  background: #e0f2fe;
+}
+
+/* Prediction Display */
+#prediction-box {
+  margin: 20px auto;
+  font-size: 1.5rem;
+  color: #0f172a;
+  background: #e0f2fe;
+  border: 2px solid #38bdf8;
+  padding: 12px 24px;
+  border-radius: 12px;
+  display: inline-block;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Buttons */
+.controls {
+  margin-top: 20px;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #1e3a8a;
+  transform: scale(1.05);
+}
+
+input[type="file"] {
+  margin-top: 10px;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  background: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 8px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.custom-file-upload:hover {
+  background: #1e3a8a;
+  transform: scale(1.05);
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+
+/* Train Status */
+.train-status {
+  margin-top: 16px;
+  font-size: 1rem;
+  color: #16a34a;
+  font-weight: 500;
+}
+
+/* Feedback Effects */
+.glow-correct {
+  animation: glowGreen 0.6s ease-out;
+}
+
+@keyframes glowGreen {
+  0% { box-shadow: 0 0 0px #4ade80; }
+  50% { box-shadow: 0 0 15px #4ade80; }
+  100% { box-shadow: 0 0 0px #4ade80; }
+}
+
+.shake-wrong {
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .video-wrapper video,
+  .video-wrapper canvas {
+    width: 90%;
+  }
+
+  button {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
+}
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #16a34a;
+  color: white;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-size: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}

@@ -1,0 +1,257 @@
+/* 🌐 Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  /* 🎨 Body */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e3edf8, #f7fafd);
+    color: #222;
+    line-height: 1.6;
+  }
+  
+  /* 🧭 Navbar */
+  .navbar {
+    background-color: #002f5e;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .brand {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 4px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffcc00;
+    transition: width 0.3s;
+  }
+  
+  .nav-links a:hover {
+    transform: scale(1.05);
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  
+  /* 📚 Sidebar */
+  .side-nav {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    width: 220px;
+    background: linear-gradient(to bottom, #ffffff, #f2f7fd);
+    height: calc(100vh - 72px);
+    padding: 2rem 1rem;
+    border-right: 1px solid #cfd8e6;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.04);
+    border-top-right-radius: 12px;
+  }
+  
+  .side-nav ul {
+    list-style: none;
+  }
+  
+  .side-nav ul li {
+    margin: 1.2rem 0;
+  }
+  
+  .side-nav ul li a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    display: inline-block;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .side-nav ul li a:hover {
+    background-color: #e1eaf3;
+    color: #002147;
+    transform: scale(1.05);
+  }
+  
+  /* 🧱 Main Layout */
+  .main-content {
+    margin-left: 240px;
+    padding: 2rem;
+  }
+  
+  /* 📦 Content Box */
+  .content-box {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(6px);
+    border-radius: 18px;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+    animation: fadeIn 0.6s ease;
+    transition: transform 0.3s;
+  }
+  
+  .content-box:hover {
+    transform: translateY(-4px);
+  }
+  
+  .content-box h2 {
+    color: #003366;
+    font-size: 1.85rem;
+    margin-bottom: 1rem;
+  }
+  
+  .content-box h3 {
+    color: #003366;
+    font-size: 1.45rem;
+    margin-top: 1.5rem;
+  }
+  
+  .content-box p, .content-box ul {
+    margin-bottom: 1rem;
+  }
+  
+  .content-box ul {
+    padding-left: 1.5rem;
+  }
+  
+  .content-box ul li {
+    list-style-type: disc;
+  }
+  
+  .content-box a {
+    color: #0055aa;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+  
+  .content-box a:hover {
+    color: #002d72;
+    text-decoration: none;
+  }
+  
+  /* 🖼️ Images */
+  .content-box img {
+    max-width: 100%;
+    border-radius: 14px;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* 🎯 Hero Section */
+  .hero {
+    background: linear-gradient(to right, #dfefff, #f4f9ff);
+    padding: 4rem 2rem 3rem;
+    margin-left: 240px;
+    border-bottom: 1px solid #d3dfe9;
+  }
+  
+  .hero-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.6rem;
+    color: #002f5e;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    color: #444;
+    max-width: 800px;
+    line-height: 1.6;
+  }
+  
+  /* 🦶 Footer */
+  footer {
+    text-align: center;
+    padding: 1.2rem;
+    background: linear-gradient(to right, #002f5e, #003f7f);
+    color: #fff;
+    margin-top: auto;
+    font-size: 0.95rem;
+  }
+  
+  /* 💨 Fade In Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* 📱 Responsive */
+  @media (max-width: 960px) {
+    .side-nav {
+      display: none;
+    }
+  
+    .main-content {
+      margin-left: 0;
+      padding: 1rem;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-links {
+      margin-top: 0.5rem;
+    }
+  
+    .nav-links a {
+      margin-left: 0;
+      margin-right: 1.2rem;
+    }
+  
+    .hero {
+      margin-left: 0;
+      padding: 3rem 1rem 2rem;
+    }
+  
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+    }
+  }
+  

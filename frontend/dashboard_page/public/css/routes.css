@@ -1,0 +1,226 @@
+/* 🌍 Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-image: url("/img/homepageimg.webp");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* 🧭 Navbar */
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: #ffd54f;
+  }
+  
+  /* 🦸 Hero Section */
+  .hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+  }
+  
+  .hero p {
+    font-size: 1.5rem;
+    color: #000000;
+  }
+  /* 🧠 Quiz Section */
+  .quiz-container {
+    background: rgba(255, 255, 255, 0.95);
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 16px;
+    max-width: 650px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .quiz-container h1 {
+    font-size: 2rem;
+    color: #004aad;
+    margin-bottom: 1.5rem;
+  }
+  
+  #hand-sign {
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  #choices {
+    margin-top: 1rem;
+  }
+  
+  #choices button {
+    margin: 0.5rem;
+    padding: 0.8rem 1.6rem;
+    font-size: 1rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #choices button:hover {
+    background-color: #0056b3;
+  }
+  
+  #hint-button,
+  #next-button {
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #hint-button {
+    background-color: #f39c12;
+    color: white;
+  }
+  
+  #hint-button:hover {
+    background-color: #e67e22;
+  }
+  
+  #next-button {
+    background-color: #27ae60;
+    color: white;
+    margin-left: 1rem;
+  }
+  
+  #next-button:hover {
+    background-color: #1e8449;
+  }
+  
+  /* 🖐 Sign Detection Grid */
+  .main-content {
+    padding: 2rem;
+  }
+  
+  .sign-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .sign-item {
+    background: #ffffff;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .sign-item:hover {
+    background: #f1f1f1;
+    transform: translateY(-4px);
+  }
+  
+  /* 📹 Webcam Section */
+  #webcamSection {
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  #webcam {
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  }
+  
+  #result {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    color: #333;
+  }
+  
+  /* 📱 Responsive */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .quiz-container h1 {
+      font-size: 1.5rem;
+    }
+  
+    .nav-links a {
+      margin-left: 1rem;
+      font-size: 0.9rem;
+    }
+  
+    .sign-grid {
+      grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    }
+  
+    #choices button {
+      font-size: 0.9rem;
+      padding: 0.6rem 1.2rem;
+    }
+  }
+  
